@@ -3,14 +3,11 @@ import { View, Text, TextInput, Button } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import StackNavigation from './navigation/StackNavigation';
 import { NavigationContainer } from '@react-navigation/native';
-import { useNetInfo } from "@react-native-community/netinfo";
 
 
 function App() {
-  const { type, isConnected } = useNetInfo();
   const [text, setText] = useState("");
 
-  console.log("Is Connected:", isConnected);
 
   const getData = async () => {
     console.log("Text", await AsyncStorage.getItem('text'));
